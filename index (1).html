@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tomáš Cyprian — Konštruktér & Control Systems</title>
+<meta name="description" content="Tomáš Cyprian — konštruktér so zameraním na výrobné linky a automatizáciu. Mechanický návrh, riadiace systémy, elektronika a firmvér od konceptu po funkčný celok.">
+<meta property="og:title" content="Tomáš Cyprian — Konštruktér & Control Systems">
+<meta property="og:description" content="Mechanický návrh + riadiace systémy + elektronika, od konceptu po funkčný celok.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c1118; --bg2:#121923; --surface:#161f2b; --surface2:#1b2635;
+    --line:#26323f; --line-soft:#1d2733;
+    --text:#e8edf4; --muted:#93a1b3; --dim:#6a7688;
+    --accent:#4da3ff; --accent2:#5ce0c6;
+    --display:'Space Grotesk',sans-serif; --body:'Inter',sans-serif; --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#0c1118;color:#e8edf4;font-family:'Inter',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(900px 500px at 85% -10%,#172435 0%,rgba(12,17,24,0) 60%);}
+  .wrap{max-width:900px;margin:0 auto;padding:0 26px}
+  a{color:#5ca8ff;text-decoration:none}
+  a:hover{text-decoration:underline}
+  .mono{font-family:'JetBrains Mono',monospace}
+
+  header{padding:90px 0 50px;border-bottom:1px solid #1d2733}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:#5ce0c6}
+  h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(32px,5.5vw,52px);letter-spacing:-.02em;line-height:1.05;margin:16px 0 14px}
+  .role{font-size:clamp(16px,2.2vw,20px);color:#c3cdd9;font-weight:500;max-width:46ch}
+  .role b{color:#fff}
+  .contact-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .chip{font-family:'JetBrains Mono',monospace;font-size:13px;border:1px solid #26323f;background:#161f2b;border-radius:3px;padding:8px 13px;color:#e8edf4}
+  .chip a{color:#e8edf4}
+
+  section{padding:52px 0;border-bottom:1px solid #1d2733}
+  .label{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#6a7688;display:flex;align-items:center;gap:12px;margin-bottom:26px}
+  .label::before{content:"";width:24px;height:1px;background:#5ce0c6}
+  h2{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(22px,3.3vw,30px);letter-spacing:-.015em;line-height:1.15}
+  p.lead{color:#aeb9c7;margin-top:14px;font-size:16.5px;max-width:64ch}
+
+  .project{border:1px solid #26323f;border-radius:9px;background:linear-gradient(160deg,#161f2b 0%,#121923 70%);padding:28px 26px;margin-top:20px}
+  .project .ptop{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+  .project h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;letter-spacing:-.01em}
+  .project .tag{font-family:'JetBrains Mono',monospace;font-size:12px;color:#5ce0c6}
+  .project p{color:#aeb9c7;margin-top:12px;font-size:15.5px}
+  .project .meta{margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#6a7688;letter-spacing:.02em}
+  .project ul{margin:12px 0 0 0;padding-left:0;list-style:none}
+  .project li{color:#aeb9c7;font-size:15px;padding:4px 0 4px 20px;position:relative}
+  .project li::before{content:"▹";position:absolute;left:0;color:#5ca8ff}
+  .award{display:inline-block;margin-top:14px;border:1px solid #26323f;border-left:2px solid #5ce0c6;background:#161f2b;padding:8px 14px;border-radius:3px;font-size:14px;color:#c3cdd9}
+
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;margin-top:22px;background:#1d2733;border:1px solid #1d2733;border-radius:8px;overflow:hidden}
+  .skill{background:#121923;padding:20px 22px}
+  .skill h4{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6a7688;margin-bottom:12px}
+  .skill ul{list-style:none}
+  .skill li{font-size:14.5px;color:#c3cdd9;padding:4px 0}
+
+  .contact-final{padding:60px 0 40px;text-align:center}
+  .contact-final h2{margin-bottom:14px}
+  .contact-final p{color:#aeb9c7;max-width:48ch;margin:0 auto 26px}
+  .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{font-family:'JetBrains Mono',monospace;font-size:14px;padding:12px 22px;border-radius:4px;display:inline-flex;align-items:center;gap:8px}
+  .btn.primary{background:#5ca8ff;color:#0a1017;font-weight:600}
+  .btn.primary:hover{text-decoration:none;filter:brightness(1.08)}
+  .btn.ghost{border:1px solid #26323f;color:#e8edf4}
+  .btn.ghost:hover{text-decoration:none;border-color:#5ca8ff}
+  footer{padding:26px 0;text-align:center}
+  footer p{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#6a7688}
+  @media(max-width:600px){header{padding:60px 0 40px}section{padding:40px 0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Konštruktér · Control Systems · Mechatronika</div>
+    <h1>Tomáš Cyprian</h1>
+    <p class="role"><b>Konštruktér so zameraním na výrobné linky a automatizáciu.</b> Navrhujem a staviam funkčné zariadenia od konceptu po hotový celok — mechanika, riadiace systémy, elektronika aj firmvér.</p>
+    <div class="contact-row">
+      <span class="chip">Trenčín, SK</span>
+      <span class="chip"><a href="https://www.linkedin.com/in/tom%C3%A1%C5%A1-cyprian-929bb22a8/" target="_blank" rel="noopener">LinkedIn ↗</a></span>
+      <span class="chip"><a href="https://github.com/ThomasCyprian" target="_blank" rel="noopener">GitHub ↗</a></span>
+      <span class="chip"><a href="mailto:tomas.cyprian.sk@gmail.com">tomas.cyprian.sk@gmail.com</a></span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="label">O mne</div>
+    <h2>Mechanika, elektronika a softvér — v jednom celku.</h2>
+    <p class="lead">Som konštruktér v spoločnosti <b style="color:#e8edf4">TC CONTACT</b>, kde navrhujem výrobné linky a jednoúčelové stroje v Autodesk Inventore. Popri tom samostatne realizujem projekty na priesečníku mechaniky, riadiacich systémov a elektroniky — od návrhu cez výrobu až po firmvér a dokumentáciu. Baví ma optimalizácia, návrh procesov a dotiahnutie riešenia do funkčného detailu.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label">Vybrané projekty</div>
+
+    <div class="project">
+      <div class="ptop">
+        <h3>Riadiaci systém pre teplotnú komoru — EMSYST</h3>
+        <span class="tag">dodaný projekt · Python</span>
+      </div>
+      <p>Samostatne navrhnutý a dodaný riadiaci a merací systém pre spoločnosť EMSYST. Systém na báze Raspberry Pi komunikuje s teplotnou komorou a multimetrom, vyhodnocuje ustálenie meraní naprieč viacerými kanálmi, automaticky prepína teplotné extrémy (šetrí čas aj energiu testovania), deteguje chybné kanály a ukladá výsledky.</p>
+      <ul>
+        <li>Detekcia ustálenia meraní (kĺzavé okno) a automatické riadenie cyklu komory</li>
+        <li>Detekcia anomálnych kanálov (konštantné / inverzné správanie)</li>
+        <li>Zber a ukladanie dát so sériovými číslami, príprava na firemný server</li>
+        <li>WebUI na kontrolu a potvrdenie dát</li>
+      </ul>
+      <div class="meta">Python · Raspberry Pi · Flask · komunikácia s prístrojmi · spracovanie dát</div>
+    </div>
+
+    <div class="project">
+      <div class="ptop">
+        <h3>Star Interceptor — autonómny sledovací teleskop</h3>
+        <span class="tag">osobný projekt · návrh + elektronika + firmvér</span>
+      </div>
+      <p>Dvojosový motorizovaný teleskopický montáž, ktorý si sám vypočíta polohu nebeského objektu z času a polohy pozorovateľa a sleduje ho po oblohe — autonómne, až 24 hodín. Navrhnutý a postavený celý samostatne: mechanika, kótovaná výkresová dokumentácia, vlastná doska plošných spojov, firmvér aj ovládacia aplikácia.</p>
+      <ul>
+        <li>Kompletný mechanický návrh a výkresová dokumentácia (Autodesk Fusion 360)</li>
+        <li>Vlastná doska plošných spojov (KiCad) — ESP32, ovládače motorov, napájanie</li>
+        <li>Firmvér v C/C++ — prepočet súradníc v reálnom čase, S-krivka akcelerácie</li>
+        <li>Ovládacia mobilná aplikácia (Android, Kotlin) + výpočty v Pythone</li>
+      </ul>
+      <span class="award">★ Víťaz krajského kola a účastník celoštátneho finále — Festival vedy a techniky (AMAVET)</span>
+      <div class="meta" style="margin-top:14px">Fusion 360 · KiCad · ESP32 / C++ · Python · Android · <a href="https://github.com/ThomasCyprian/star-interceptor-mk3" target="_blank" rel="noopener">GitHub ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label">Zručnosti</div>
+    <div class="skills-grid">
+      <div class="skill">
+        <h4>Mechanika / CAD</h4>
+        <ul>
+          <li>Autodesk Inventor / Vault</li>
+          <li>Autodesk Fusion 360</li>
+          <li>Výkresová dokumentácia</li>
+          <li>Návrh výrobných liniek</li>
+          <li>Jednoúčelové stroje</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h4>Elektronika</h4>
+        <ul>
+          <li>KiCad — schéma + DPS</li>
+          <li>ESP32 / mikrokontroléry</li>
+          <li>Senzorika, riadenie motorov</li>
+          <li>Spájkovanie, oživenie</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h4>Softvér / Firmvér</h4>
+        <ul>
+          <li>C / C++ (embedded)</li>
+          <li>Python</li>
+          <li>Flask (WebUI)</li>
+          <li>Kotlin (Android)</li>
+          <li>Základy Rust</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h4>Oblasti</h4>
+        <ul>
+          <li>Riadiace a meracie systémy</li>
+          <li>Automatizácia výroby</li>
+          <li>Mechatronika</li>
+          <li>Návrh a optimalizácia procesov</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-final">
+  <div class="wrap">
+    <h2>Kontakt</h2>
+    <p>Otvorený spolupráci na riadiacich systémoch, automatizácii a mechatronických projektoch.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:tomas.cyprian.sk@gmail.com">✉ tomas.cyprian.sk@gmail.com</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/tom%C3%A1%C5%A1-cyprian-929bb22a8/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn ghost" href="https://github.com/ThomasCyprian" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><p>© 2026 Tomáš Cyprian · Konštruktér &amp; Control Systems</p></div>
+</footer>
+</body>
+</html>
